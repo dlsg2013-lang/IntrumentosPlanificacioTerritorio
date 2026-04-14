@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Proyecto: Puerto López - Colombia</title>
+    <!-- Importación de Google Fonts: Lato en todos sus grosores y estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Paleta de Colores Lento-Cafe aplicada con Regla 60-30-10 */
+        :root {
+            /* 60% Dominante: Fondos y espacios amplios */
+            --bg-outer: #F2E2C4;
+            --bg-inner: #FFFFFF;
+            --bg-ficha: #fdfaf5; /* F2E2C4 muy aclarado para contraste interno */
+
+            /* 30% Secundario: Textos principales, bordes suaves y subtítulos */
+            --text-main: #401208;
+            --text-muted: #735F4D;
+            --border-soft: #BFAB93;
+
+            /* 10% Acento: Puntos de atención, iconos, líneas clave */
+            --accent: #BF784E;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400; /* Regular para cuerpo de texto */
+            background-color: var(--bg-outer);
+            color: var(--text-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Contenedor principal */
+        .document-container {
+            background-color: var(--bg-inner);
+            width: 100%;
+            max-width: 850px;
+            padding: 4rem 5rem;
+            box-shadow: 0 15px 35px rgba(64, 18, 8, 0.08);
+            border-top: 6px solid var(--accent); /* Uso del 10% de acento */
+            border-radius: 8px;
+        }
+
+        /* Tipografía y Jerarquía Visual con Montserrat */
+        h1, h2, h3, h4 {
+            color: var(--text-main);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700; /* Bold para máximo impacto */
+            text-align: center;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 600; /* SemiBold */
+            border-bottom: 1px solid var(--border-soft); /* Uso del 30% secundario */
+            padding-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500; /* Medium */
+            font-style: italic;
+            color: var(--text-muted); /* Color secundario para jerarquía APA */
+            margin-top: 2rem;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* Estilo APA adaptado a Sans-Serif */
+        p {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            color: var(--text-main);
+            text-indent: 2rem; /* Mantenemos el rigor académico */
+        }
+
+        /* Listas */
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 3rem;
+            font-weight: 400;
+        }
+        
+        li {
+            margin-bottom: 0.6rem;
+            text-indent: 0;
+            line-height: 1.7;
+        }
+
+        /* Tablas: Estética limpia y profesional */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0;
+            font-size: 0.9rem;
+            font-weight: 300; /* Light para datos de tabla, facilita la lectura cruzada */
+        }
+
+        th, td {
+            text-align: left;
+            padding: 1rem 0.75rem;
+            vertical-align: top;
+        }
+
+        th {
+            border-top: 2px solid var(--text-main);
+            border-bottom: 2px solid var(--accent); /* Acento sutil en encabezados */
+            font-weight: 600;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+        }
+
+        td {
+            border-bottom: 1px solid rgba(191, 171, 147, 0.4); /* Transparencia del color secundario */
+        }
+
+        tr:last-child td {
+            border-bottom: 2px solid var(--text-main);
+        }
+
+        /* Ficha Técnica Inicial - Bloque resaltado (Regla 60%) */
+        .ficha-tecnica {
+            background-color: var(--bg-ficha);
+            border-left: 4px solid var(--border-soft);
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .ficha-tecnica h1 {
+            font-size: 1.3rem;
+            margin-top: 0;
+            border-bottom: none;
+            color: var(--text-main);
+        }
+
+        .ficha-tecnica table { margin: 0; }
+        .ficha-tecnica th { border: none; font-weight: 600; width: 35%; padding: 0.6rem 0.4rem; font-size: 0.9rem; letter-spacing: normal; text-transform: none; }
+        .ficha-tecnica td { padding: 0.6rem 0.4rem; font-weight: 400; }
+        .ficha-tecnica tr:last-child td { border-bottom: none; }
+
+        /* Referencias APA */
+        .referencias p {
+            text-indent: -2rem;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            word-wrap: break-word;
+            font-weight: 300; /* Suavizamos el peso de las referencias */
+            font-size: 0.95rem;
+        }
+
+        /* Integración suave de Iconos (Regla del 10%) */
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            padding: 0.5rem;
+            background-color: rgba(191, 120, 78, 0.1); /* Fondo translúcido con el color de acento */
+            fill: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(64, 18, 8, 0.05); /* Profundidad sutil */
+        }
+
+        /* Footer Institucional */
+        .document-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-soft);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .document-footer p {
+            margin-bottom: 0.3rem;
+            text-align: center;
+            text-indent: 0;
+            font-weight: 400;
+        }
+
+        .document-footer strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .document-container {
+                padding: 2rem 1.5rem;
+            }
+            p { text-indent: 1.5rem; }
+            table { font-size: 0.85rem; }
+            .ficha-tecnica { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="document-container">
+        
+        <!-- FICHA TÉCNICA -->
+        <section class="ficha-tecnica">
+            <h1 style="text-align: center;">
+                PERFIL DE PROYECTO<br>
+                <span style="font-size: 1.1rem; font-weight: 400;">RESILIENCIA URBANO-RURAL Y RESTAURACIÓN SOCIO-ECOLÓGICA DE LA PLANICIE ALUVIAL</span><br>
+                <span style="font-size: 1.1rem; font-weight: 400;">PUERTO LÓPEZ, META — COLOMBIA</span>
+            </h1>
+            <table>
+                <tbody>
+                    <tr><th>Municipio</th><td>Puerto López, Meta — Colombia</td></tr>
+                    <tr><th>Población</th><td>34.696 habitantes (Fuente: DANE / PBOT 2018-2030)</td></tr>
+                    <tr><th>Instrumento rector</th><td>Plan Básico de Ordenamiento Territorial (PBOT) 2018-2030</td></tr>
+                    <tr><th>Sectores de intervención</th><td>Barrios Clemente Naranjo y Juana Sofía — Zona de expansión norte (receptora VIP)</td></tr>
+                    <tr><th>Ecosistemas objetivo</th><td>Ronda hídrica Río Metica — Reserva Natural Alto de Menegua — Parque Natural El Yucao</td></tr>
+                    <tr><th>Horizonte de intervención</th><td>Corto (0-3 años) / Mediano (4-8 años) / Largo plazo (12 años)</td></tr>
+                    <tr><th>Marco normativo</th><td>Ley 388/1997 · Ley 1523/2012 · Decreto 1077/2015 · CONPES 3604 · PND 2022-2026</td></tr>
+                    <tr><th>Principios PBOT alineados</th><td>Sostenibilidad Ambiental · Equidad Social Territorial · Conectividad</td></tr>
+                    <tr><th>Fecha de elaboración</th><td>2025</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 1. TÍTULO -->
+        <h1>1. Título</h1>
+        <p style="text-align: center; font-weight: 600; font-size: 1.15rem; text-indent: 0; color: var(--text-main);">
+            Modelo Integrado de Reasentamiento Estratégico y Restauración Ecosistémica de Rondas Hídricas: Hacia un Puerto López Resiliente al Cambio Climático.
+        </p>
+
+        <!-- 2. RESUMEN -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v6h6v10H6zm2-7h8v2H8v-2zm0 4h5v2H8v-2z"/></svg>
+            2. Resumen
+        </h2>
+        <p>El presente proyecto propone la intervención estructural de las zonas de amenaza alta por inundación en el casco urbano de Puerto López (Meta), específicamente en los barrios Clemente Naranjo y Juana Sofía, identificados por el PBOT 2018-2030 como áreas que requieren la aplicación del Tratamiento de Mejoramiento Integral conforme al marco del CONPES 3604. La estrategia combina el reasentamiento de las familias en riesgo hacia la zona de expansión norte del municipio —designada por el propio PBOT como receptora prioritaria de Vivienda de Interés Prioritario (VIP)— con la restauración biótica de las 15 hectáreas de ronda hídrica liberadas en la cuenca baja del Río Metica.</p>
+        <p>El modelo transforma el conflicto territorial sobre planicie aluvial en una oportunidad de conectividad ecológica y justicia ambiental, entregando las áreas recuperadas a Cormacarena para su gestión como suelo de protección —en cumplimiento del artículo 121 de la Ley 388 de 1997— y articulándolas a las Zonas de Interés Ambiental reconocidas en el PBOT: la Reserva Natural Alto de Menegua y el Parque Natural Municipal El Yucao. El proyecto materializa directamente las Medidas PRICCO de cambio climático adoptadas en el PBOT —restauración de bosques riparios, drenaje eficiente y Pago por Servicios Ambientales— e integra los cinco principios rectores del instrumento: Sostenibilidad Ambiental, Productividad, Regionalización, Equidad Social Territorial y Conectividad.</p>
+
+        <!-- 3. ALCANCE -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/></svg>
+            3. Alcance
+        </h2>
+        <p>La intervención tiene alcance multidimensional y abarca el 100% de los asentamientos localizados en suelos de riesgo no mitigable identificados en el estudio básico del PBOT, integrando las siguientes líneas de acción del instrumento de planificación vigente:</p>
+        <ul>
+            <li><strong>Gestión catastral y titulación:</strong> Barrido predial de los sectores Clemente Naranjo y Juana Sofía con aplicación de la Línea de Adaptación del PBOT (legalización y titulación de predios), con retribución económica o en especie al municipio.</li>
+            <li><strong>Vivienda de Interés Prioritario (VIP) ecológica:</strong> Diseño y construcción en la zona de expansión norte, bajo la Línea de Construcción del PBOT, con agrupaciones máximas de 120 unidades, criterios bioclimáticos para clima cálido húmedo y alianzas público-privadas (Mi Casa Ya).</li>
+            <li><strong>Restauración ecosistémica:</strong> 15 ha de bosques de galería en la ronda hídrica del Río Metica (faja mínima de 30 m según PBOT), enriquecidas con especies nativas y articuladas al sistema de Pago por Servicios Ambientales.</li>
+            <li><strong>Infraestructura resiliente:</strong> Sistemas de drenaje eficiente en vías propensas a inundación y construcción de la Planta de Tratamiento de Aguas Residuales (PTAR), contemplados en los Sistemas Estructurantes del PBOT.</li>
+            <li><strong>Actualización PBOT y SIG Municipal:</strong> Actualización de la cartografía de riesgo a escala 1:5.000 (Dcto. 1077/2015) e implementación del Sistema de Soporte Ambiental Municipal para monitoreo de los 10.099 ha de humedales y 5.127 ha de zonas de recarga hídrica del municipio.</li>
+        </ul>
+
+        <!-- 4. INTRODUCCIÓN -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            4. Introducción
+        </h2>
+        <p>El municipio de Puerto López, con una población de 34.696 habitantes y un horizonte de planificación de 12 años establecido en su PBOT, se localiza en una región de excepcional sensibilidad hídrica dentro de los Llanos Orientales colombianos. El municipio cuenta con una superficie de sabanas inundables que alcanza las 62.664,91 ha —equivalentes al 9,12% de su territorio—, 10.099,36 ha de humedales distribuidos en 1.064 cuerpos de agua identificados, y 5.127,10 ha de zonas de recarga hídrica. Esta riqueza hídrica convive paradójicamente con la ocupación humana sobre las mismas planicies aluviales que la generan.</p>
+        <p>El PBOT 2018-2030 de Puerto López plantea cinco principios rectores para el ordenamiento del territorio: Sostenibilidad Ambiental, Productividad, Regionalización, Equidad Social Territorial y Conectividad. El presente proyecto se ancla directamente en el primero y el cuarto de estos principios: actuar en el presente pensando en el futuro —garantizando la existencia del recurso hídrico como patrimonio natural más valioso— y abolir las barreras estructurales que concentran a la población más vulnerable en las zonas de mayor riesgo. El instrumento de planificación establece explícitamente, en su componente de Gestión del Riesgo, la obligación de gestionar la entrega de áreas catalogadas como riesgo no mitigable a la Autoridad Ambiental y de fortalecer los procesos de control urbano para evitar nuevos asentamientos en zonas de amenaza.</p>
+        <p>El presente perfil de proyecto traduce estos mandatos normativos en una intervención concreta, territorial y financieramente viable, que articula los instrumentos de gestión y financiación del PBOT —plusvalía, valorización, planes parciales, Pago por Servicios Ambientales— con los recursos del Sistema General de Regalías y los programas nacionales de vivienda, configurando un modelo replicable para otros municipios del Meta con condiciones geomorfológicas similares.</p>
+
+        <!-- 5. PLANTEAMIENTO DEL PROBLEMA -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
+            5. Planteamiento del Problema y Justificación
+        </h2>
+        <p>La problemática estructural de Puerto López radica en el colapso del metabolismo socioecológico del territorio: el 100% del área urbana se asienta sobre planicies aluviales que el propio PBOT reconoce como suelo de alta sensibilidad hídrica, mientras que las comunidades más vulnerables —concentradas en los barrios Clemente Naranjo y Juana Sofía— carecen de acceso adecuado a los servicios públicos, a la titulación predial y a un hábitat seguro. El PBOT identifica estos barrios de forma explícita como sectores que requieren la aplicación del Tratamiento de Mejoramiento Integral, reconociendo su déficit en al menos cuatro de los sistemas estructurantes urbanos.</p>
+        <p>Esta situación se desagrega en tres componentes interdependientes que el PBOT aborda sectorialmente, pero que este proyecto integra de forma sistémica:</p>
+
+        <h3>5.1. Componente Ambiental</h3>
+        <p>El municipio posee un patrimonio hídrico excepcional: nueve ríos principales (Meta, Guatiquía, Humea, Metica, Guayuriba, Negro, Manacacias y los Caños la Venturosa y la Morichera), 12 lagunas identificadas y más de 10.000 ha de humedales. Sin embargo, la ocupación de las rondas hídricas —cuya faja de protección mínima es de 30 metros según el PBOT— ha degradado sistemáticamente los bosques de galería, definidos por el instrumento como franjas de vegetación esenciales para evitar la erosión, proteger los bancos del río y servir de corredor ecológico y hábitat de diversidad faunística.</p>
+        <p>El PBOT adoptó como medidas prioritarias y obligatorias de cambio climático la Restauración y el Enriquecimiento de Bosques Riparios y la Implementación de Pago por Servicios Ambientales, materializadas en el Régimen de Usos y en los Instrumentos de Gestión y Financiación. Estas medidas permanecen sin ejecutar en los sectores de mayor presión de ocupación urbana informal, generando una planificación declarativa que no ha resuelto la contradicción de fondo: un territorio con 62.664 ha de sabanas inundables que no puede garantizar la seguridad de sus habitantes ante las inundaciones periódicas.</p>
+
+        <h3>5.2. Componente Social</h3>
+        <p>El PBOT reconoce que el municipio enfrenta un déficit cuantitativo y cualitativo de vivienda que afecta principalmente a la población asentada en zonas de riesgo alto no mitigable. Para resolverlo, el instrumento establece la Línea de Construcción de VIP con agrupaciones máximas de 120 unidades distribuidas homogéneamente para evitar guetos, destinando el 20% del área de expansión norte a este uso sin posibilidad de compensación en otro sitio. Sin embargo, los programas de vivienda VIP deben desarrollarse de forma paralela con la infraestructura que garantiza la habitabilidad —equipamientos, espacio público, servicios públicos y vías—, condición que hasta ahora no se ha cumplido en los sectores de intervención.</p>
+        <p>La Estrategia de Mejoramiento Integral de Barrios —referenciada en el CONPES 3604— contempla la regularización urbanística, la titulación, el mejoramiento de vivienda, la provisión de servicios públicos y la participación comunitaria. Los barrios Clemente Naranjo y Juana Sofía fueron explícitamente identificados por el PBOT para la aplicación de esta estrategia, pero el proceso de reasentamiento de las familias en zonas de riesgo no mitigable exige una intervención de mayor calado que trasciende el mejoramiento in situ y requiere la relocalización planificada hacia suelo seguro.</p>
+
+        <h3>5.3. Componente de Infraestructura</h3>
+        <p>El PBOT incluye entre sus Medidas PRICCO obligatorias de cambio climático la Implementación de Drenaje Eficiente en vías propensas a inundación, materializada en los Sistemas Estructurantes del Plan Vial. No obstante, la infraestructura de saneamiento básico es el déficit más crítico: la ausencia de una Planta de Tratamiento de Aguas Residuales (PTAR) provoca el vertimiento directo de aguas residuales a las fuentes hídricas de captación, degradando simultáneamente la salud pública y el equilibrio ecosistémico de los ríos y humedales identificados en el Sistema de Soporte Ambiental Municipal.</p>
+        <p>El PBOT establece la obligatoriedad del autoabastecimiento de servicios públicos domiciliarios como condición para el desarrollo del suelo suburbano, y la disponibilidad de servicios básicos como requisito previo a cualquier proceso de titulación predial. Esto genera una trampa normativa: no se puede titular sin servicios, y no se puede invertir en servicios sin titulación. El presente proyecto rompe este ciclo mediante la provisión integral de infraestructura en las zonas receptoras del reasentamiento como condición precedente al traslado de las familias.</p>
+
+        <h3>5.4. Base Ecosistémica del Municipio — Datos PBOT</h3>
+        <p>Los siguientes datos del PBOT 2018-2030 sustentan la urgencia de la intervención y dimensionan el patrimonio natural en riesgo:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Ecosistema / Área de Importancia Ambiental</th>
+                    <th>Superficie (ha)</th>
+                    <th>% Municipio</th>
+                    <th>Relevancia para el Proyecto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Humedales (1.064 cuerpos de agua)</td>
+                    <td>10.099,36</td>
+                    <td>1,47%</td>
+                    <td>Regulación hídrica y hábitat de biodiversidad a proteger</td>
+                </tr>
+                <tr>
+                    <td>Zonas de Recarga Hídrica</td>
+                    <td>5.127,10</td>
+                    <td>0,75%</td>
+                    <td>Garantizan disponibilidad de agua subterránea a largo plazo</td>
+                </tr>
+                <tr>
+                    <td>Sabanas Inundables (planicie aluvial)</td>
+                    <td>62.664,91</td>
+                    <td>9,12%</td>
+                    <td>Determinante geomorfológica principal — zona de intervención</td>
+                </tr>
+                <tr>
+                    <td>Bosques de Galería (rondas hídricas)</td>
+                    <td>Variable — mín. 30m</td>
+                    <td>—</td>
+                    <td>Área objetivo de restauración: 15 ha en ronda del Río Metica</td>
+                </tr>
+                <tr>
+                    <td>Reserva Natural Alto de Menegua</td>
+                    <td>Zona de Interés</td>
+                    <td>—</td>
+                    <td>Corredor ecológico receptor de conectividad post-restauración</td>
+                </tr>
+                <tr>
+                    <td>Parque Natural Municipal El Yucao</td>
+                    <td>Zona de Interés</td>
+                    <td>—</td>
+                    <td>Nodo de biodiversidad articulado a la Estructura Ecológica</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 0.85rem; font-style: italic; text-indent: 0; color: var(--text-muted);">Fuente: PBOT Puerto López 2018-2030 — Documento Resumen, Sistemas de Soporte Ambiental Municipal.</p>
+
+        <!-- 6. OBJETIVOS -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            6. Objetivos
+        </h2>
+        
+        <h3>6.1. Objetivo General</h3>
+        <p>Reorganizar el modelo de ocupación de Puerto López a través del reasentamiento de la población en riesgo no mitigable —en aplicación del Tratamiento de Mejoramiento Integral del PBOT y el marco del CONPES 3604— y la consolidación de la Estructura Ecológica Principal como sistema de soporte del desarrollo municipal, materializando las Medidas PRICCO de cambio climático adoptadas en el instrumento de planificación vigente.</p>
+
+        <h3>6.2. Objetivos Específicos</h3>
+        <ul>
+            <li><strong>Delimitar cartográficamente</strong> a escala 1:5.000 las zonas de riesgo alto no mitigable en los barrios Clemente Naranjo y Juana Sofía, bajo los estándares técnicos del Decreto 1077 de 2015, actualizando el componente de riesgo del PBOT.</li>
+            <li><strong>Ejecutar el programa de Vivienda</strong> de Interés Prioritario (VIP) ecológica en la zona de expansión norte del municipio, con agrupaciones máximas de 120 unidades, criterios bioclimáticos para clima cálido húmedo, sistemas de cosecha de agua y energías alternativas.</li>
+            <li><strong>Restaurar 15 ha de bosques</strong> de galería en la ronda hídrica del Río Metica (faja mínima 30 m), mediante enriquecimiento con especies nativas y esquemas de Pago por Servicios Ambientales.</li>
+            <li><strong>Implementar sistemas de drenaje</strong> eficiente en vías propensas a inundación y una Planta de Tratamiento de Aguas Residuales (PTAR), conforme a los Sistemas Estructurantes del Plan Vial del PBOT.</li>
+            <li><strong>Transferir formalmente</strong> las áreas de riesgo no mitigable liberadas a Cormacarena para su gestión como suelo de protección e incorporarlas al sistema de espacio público del municipio, evitando la re-invasión (Art. 121 Ley 388).</li>
+            <li><strong>Implementar el Sistema de Información Geográfica (SIG)</strong> del Sistema de Soporte Ambiental Municipal para el monitoreo continuo de los ecosistemas y variables socioeconómicas.</li>
+        </ul>
+
+        <!-- 7. ALCANCE MEDIANO Y LARGO PLAZO -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9a8.994 8.994 0 0 0 7.03-14.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+            7. Alcance de Mediano y Largo Plazo
+        </h2>
+
+        <h3>7.1. Mediano Plazo (4-8 años) — Objetivos PBOT Período 2</h3>
+        <p>El PBOT de Puerto López articula las siguientes metas de mediano plazo con la intervención propuesta:</p>
+        <ul>
+            <li><strong>Gestión del Riesgo:</strong> Reducción de condiciones de riesgo existentes mediante proyectos específicos articulados supramunicipalmente e implementación de medidas de mitigación estructural resultantes de los estudios detallados.</li>
+            <li><strong>Barrido catastral y titulación:</strong> Finalización de la titulación formal de predios receptores en la zona de expansión norte y entrega legal a Cormacarena.</li>
+            <li><strong>Espacio Público Sostenible:</strong> Implementación de la Cartilla de Espacio Público del PBOT con diseño sostenible en los corredores ecológicos restaurados.</li>
+            <li><strong>Conectividad ecológica:</strong> Las 15 ha de bosques riparios restaurados incorporadas al sistema de espacio público efectivo rural, articuladas a la Reserva Natural Alto de Menegua.</li>
+            <li><strong>Infraestructura:</strong> PTAR en operación plena y alcantarillado resiliente en los sectores de intervención prioritaria.</li>
+        </ul>
+
+        <h3>7.2. Largo Plazo (12 años) — Visión PBOT</h3>
+        <p>Conforme a la visión del PBOT 2018-2030, el largo plazo del proyecto apunta a:</p>
+        <ul>
+            <li><strong>Cero pérdida de vidas:</strong> Sistema de alerta temprana agroclimática operativo con monitoreo de condiciones climáticas.</li>
+            <li><strong>Puerto López como nodo regional:</strong> Consolidación como centro de operaciones de la Altillanura, con transporte fluvial por el Río Meta posicionado como vector de competitividad.</li>
+            <li><strong>Turismo ecosistémico:</strong> Nodos turísticos integrados a los corredores biológicos restaurados como oferta de ecoturismo y etnoturismo.</li>
+            <li><strong>Sostenibilidad fiscal:</strong> La plusvalía generada por el cambio de uso del suelo constituida como fuente permanente de financiación de obras de urbanismo y espacio público.</li>
+        </ul>
+
+        <!-- 8. METODOLOGÍA -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.73 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.49-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+            8. Metodología
+        </h2>
+        <p>Se aplicará un enfoque de Planeación Territorial Sistémica y Transdisciplinaria, siguiendo el proceso de formulación establecido en el PBOT y estructurado en cuatro fases:</p>
+        
+        <p style="text-indent: 0; font-weight: 600; color: var(--text-muted);">Fase 1 — Diagnóstica y Cartográfica (Año 1)</p>
+        <ul>
+            <li>Análisis multitemporal de geoinformación y modelamiento de amenaza a escala 1:5.000.</li>
+            <li>Barrido catastral universal de predios en zonas de riesgo con censo socioeconómico de hogares.</li>
+            <li>Validación social participativa del riesgo con las comunidades.</li>
+            <li>Identificación y valoración de predios receptores en la zona de expansión norte (Enajenación Voluntaria).</li>
+        </ul>
+
+        <p style="text-indent: 0; font-weight: 600; color: var(--text-muted);">Fase 2 — Propositiva e Instrumental (Años 1-2)</p>
+        <ul>
+            <li>Aplicación del instrumento de Plusvalía (30-50%) y Valorización para financiación de obras.</li>
+            <li>Formulación del Plan Parcial para la zona de expansión norte receptora de VIP.</li>
+            <li>Diseño arquitectónico bioclimático de la VIP.</li>
+            <li>Formulación del Plan de Restauración Ecológica para las 15 ha de ronda hídrica liberada.</li>
+        </ul>
+
+        <p style="text-indent: 0; font-weight: 600; color: var(--text-muted);">Fase 3 — Ejecución Integral (Años 2-6)</p>
+        <ul>
+            <li>Construcción de infraestructura de drenaje y PTAR como condición previa al traslado.</li>
+            <li>Reasentamiento progresivo con acompañamiento psicosocial y entrega de VIP.</li>
+            <li>Restauración ecológica activa de las áreas liberadas.</li>
+            <li>Transferencia formal a Cormacarena y ejecución de Medidas PRICCO en suelo rural adyacente.</li>
+        </ul>
+
+        <p style="text-indent: 0; font-weight: 600; color: var(--text-muted);">Fase 4 — Monitoreo, Evaluación y Actualización (Continuo)</p>
+        <ul>
+            <li>Implementación del SIG del Sistema de Soporte Ambiental Municipal.</li>
+            <li>Optimización de sistemas de alerta temprana agroclimática.</li>
+            <li>Evaluación de impacto bianual y actualización de la cartografía de riesgo en el PBOT.</li>
+        </ul>
+
+        <h3>8.1. Medidas PRICCO del PBOT Vinculadas al Proyecto</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Medida PRICCO / Modelo</th>
+                    <th>Materialización en PBOT</th>
+                    <th>Vinculación al Proyecto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sistemas Silvopastoriles</td>
+                    <td>Régimen usos suelo rural</td>
+                    <td>Reconversión en suelo rural liberado</td>
+                </tr>
+                <tr>
+                    <td>Restauración Bosques Riparios</td>
+                    <td>Régimen de usos</td>
+                    <td>Meta central: 15 ha en Río Metica</td>
+                </tr>
+                <tr>
+                    <td>Pago Servicios Ambientales</td>
+                    <td>Instrumentos de gestión</td>
+                    <td>Fuente de financiación complementaria</td>
+                </tr>
+                <tr>
+                    <td>Drenaje eficiente en vías</td>
+                    <td>Sistemas estructurantes</td>
+                    <td>Componente de infraestructura resiliente</td>
+                </tr>
+                <tr>
+                    <td>Cosecha de Agua</td>
+                    <td>Programa de ejecución</td>
+                    <td>Integrada en diseño bioclimático VIP</td>
+                </tr>
+                <tr>
+                    <td>Gestión de aguas subterráneas</td>
+                    <td>Sistema Soporte Ambiental</td>
+                    <td>Incorporado al SIG municipal continuo</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 9. COSTOS -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+            9. Costos
+        </h2>
+        <p>La financiación se estructura mediante la concurrencia de fuentes en un esquema multinivel, articulando los Instrumentos de Financiación del PBOT (plusvalía y valorización), el Sistema General de Regalías y los programas nacionales de vivienda. La estrategia descansa en tres pilares establecidos en el propio PBOT:</p>
+        <ul>
+            <li><strong>Plusvalía urbana (30-50%):</strong> Generada por el cambio de uso del suelo en la zona de expansión norte.</li>
+            <li><strong>Valorización:</strong> Captación del mayor valor generado por obras de mejoramiento vial y equipamientos.</li>
+            <li><strong>SGR y programas nacionales:</strong> Asignaciones del Sistema General de Regalías (1% y 15%) y cofinanciación Mi Casa Ya.</li>
+            <li><strong>Alianzas público-privadas:</strong> Proyectos colaborativos y gestión de subsidios.</li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente / Estrategia</th>
+                    <th>Mecanismo / Instrumento</th>
+                    <th>Prioridad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Restauración 15 ha Bosques</td>
+                    <td>SGR 1% conservación + PSA</td>
+                    <td>Alta — cuatrienio 1</td>
+                </tr>
+                <tr>
+                    <td>VIP Ecológica (máx. 120 ud)</td>
+                    <td>Mi Casa Ya + cofinanciación + SGR 15%</td>
+                    <td>Alta — cuatrienio 1</td>
+                </tr>
+                <tr>
+                    <td>Drenaje eficiente + PTAR</td>
+                    <td>SGR + Plusvalía urbana</td>
+                    <td>Media — años 3-6</td>
+                </tr>
+                <tr>
+                    <td>Mejoramiento Integral Barrios</td>
+                    <td>Recursos propios + SGR</td>
+                    <td>Alta — año 1-3</td>
+                </tr>
+                <tr>
+                    <td>Barrido Catastral y Titulación</td>
+                    <td>Recursos propios + IGAC</td>
+                    <td>Alta — año 1-2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 10. RESULTADOS -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+            10. Resultados Esperados
+        </h2>
+        <p>Los resultados están alineados con los objetivos y estrategias de Gestión del Riesgo y Cambio Climático del PBOT, los criterios del Sistema de Espacio Público Sostenible y los principios de Sostenibilidad Ambiental y Equidad Social Territorial:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dimensión</th>
+                    <th>Resultado Esperado</th>
+                    <th>Indicador Clave (PBOT)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ambiental</td>
+                    <td>Restauración de 15 ha de bosques riparios en la ronda del Río Metica.</td>
+                    <td>Ha restauradas / Índice de cobertura</td>
+                </tr>
+                <tr>
+                    <td>Ambiental</td>
+                    <td>Entrega formal de áreas a Cormacarena como suelo de protección.</td>
+                    <td>N.° ha transferidas / N.° re-invadidas = 0</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>Cero pérdida de vidas mediante reasentamiento con VIP ecológica.</td>
+                    <td>N.° familias reasentadas / Tasa accidentalidad = 0</td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>Mejoramiento Integral: titulación y servicios en sectores intervenidos.</td>
+                    <td>N.° predios titulados / Déficit de sistemas resuelto</td>
+                </tr>
+                <tr>
+                    <td>Institucional</td>
+                    <td>PBOT actualizado con cartografía de riesgo detallada (1:5.000).</td>
+                    <td>Cartografía adoptada</td>
+                </tr>
+                <tr>
+                    <td>Institucional</td>
+                    <td>SIG Municipal del Sistema de Soporte Ambiental operativo.</td>
+                    <td>SIG activo con reportes a Cormacarena</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- MARCO NORMATIVO -->
+        <h3 style="margin-top: 3.5rem;">Marco Normativo y de Planificación de Referencia</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600; width: 25%; color: var(--text-muted);">PBOT Puerto López</td>
+                    <td>Instrumento rector. Define Tratamiento Mejoramiento Integral, VIP y Medidas PRICCO obligatorias.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--text-muted);">CONPES 3604</td>
+                    <td>Marco para formulación de programas de Mejoramiento Integral de Barrios.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--text-muted);">Ley 388/1997</td>
+                    <td>Obliga entrega de áreas de riesgo. Habilita instrumentos de financiación (plusvalía).</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--text-muted);">Ley 1523/2012</td>
+                    <td>Integra conocimiento del riesgo como determinante del ordenamiento territorial.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600; color: var(--text-muted);">Decreto 1077/2015</td>
+                    <td>Marco técnico para estudios de amenaza por inundación a escala 1:5.000.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- REFERENCIAS APA -->
+        <h2>
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
+            Referencias
+        </h2>
+        <div class="referencias">
+            <p>Alcaldía de Puerto López. (2019). <i>Acuerdo N° 031 Revisión PBOT Puerto López</i>.</p>
+            <p>Consorcio Ordenamiento Puerto López. (2019). <i>PLAN BÁSICO DE ORDENAMIENTO TERRITORIAL MUNICIPIO DE PUERTO LÓPEZ META</i>.</p>
+            <p>DNP. (2024). <i>MEJORAMIENTO PRODUCTIVO DE LOS PEQUEÑOS PRODUCTORES DEL MUNICIPIO DE PUERTO LÓPEZ</i>.</p>
+            <p>Patarroyo, V. D. G. J. (2006). <i>Puerto López</i>.</p>
+            <p>Rios, J. (2024). <i>Horizonte 2030: Uniendo Sueños, Construyendo Puerto López</i>.</p>
+            <p>Urbanística. (2019). <i>PBOT 2018 - 2030 Puerto López</i>.</p>
+        </div>
+
+        <!-- PIE DE PÁGINA INSTITUCIONAL -->
+        <footer class="document-footer">
+            <p><strong>David Leonardo Sanabria Garcia</strong></p>
+            <p>Fase 3 Modelos de ocupación del territorio, su relación con las ciudades sostenibles y la participación ciudadana en el ordenamiento del territorio</p>
+            <p>Curso: Instrumentos de planificación del territorio</p>
+            <p>Maestría en Geoinformación del Territorio</p>
+            <p>Escuela de Ciencias Agrícolas, Pecuarias y del Medio Ambiente</p>
+            <p><strong>Universidad Nacional Abierta y a Distancia</strong></p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
